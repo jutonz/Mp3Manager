@@ -2,30 +2,16 @@ package mp3manager;
 
 import org.jaudiotagger.audio.mp3.MP3File;
 import org.jaudiotagger.tag.TagField;
-import org.junit.Before;
 import org.junit.Test;
 
-import java.io.File;
 import java.util.Iterator;
 
 import static junit.framework.TestCase.assertEquals;
 
-public class TagManagerTest {
-
-    private File fireSign;
-    private File fullFocus;
-    private File deepDown;
-
-    @Before
-    public void setUp() throws Exception {
-        fireSign = new File("testFiles/01. Agulo feat. David Berkeley - Fire Sign (Suncatcher Remix).mp3");
-        fullFocus = new File("testFiles/06. Armin van Buuren - Full Focus.mp3");
-        deepDown = new File("testFiles/12. Josh Gabriel pres. Winter Kills - Deep Down (Alex M.O.R.P.H. Remix).mp3");
-    }
+public class TagManagerTest extends TestCase {
 
     @Test
     public void testGetArtist() throws Exception {
-//        System.out.println("Artist: " + TagManager.getArtist(fireSign));
         assertEquals("Agulo feat. David Berkeley", TagManager.getArtist(fireSign));
         assertEquals("Armin van Buuren", TagManager.getArtist(fullFocus));
         assertEquals("Josh Gabriel pres. Winter Kills", TagManager.getArtist(deepDown));

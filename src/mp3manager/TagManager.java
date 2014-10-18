@@ -88,6 +88,13 @@ public class TagManager {
         return mp3file;
     }
 
+    /**
+     * Returns the specified tag from the specified file.
+     *
+     * @param file with tags
+     * @param tag to retrieve
+     * @return the tag from the file
+     */
     public static String getTagFromFile(File file, String tag) {
         String result = null;
         try {
